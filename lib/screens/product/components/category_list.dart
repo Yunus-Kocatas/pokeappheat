@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:pokeappheat/controllers/product_controller.dart';
 
 import '../../../constants.dart';
 
@@ -12,6 +15,7 @@ class _CategoryListState extends State<CategoryList> {
   // by default first item will be selected
   int selectedIndex = 0;
   List categories = ['Poke1', 'Poke2', 'Poke3', 'Poke4'];
+  ProductController productController = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,9 +44,16 @@ class _CategoryListState extends State<CategoryList> {
                   : Colors.transparent,
               borderRadius: BorderRadius.circular(6),
             ),
-            child: Text(
-              categories[index],
-              style: TextStyle(color: Colors.white),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {});
+
+                print(categories);
+              },
+              child: Text(
+                categories[index],
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ),

@@ -4,16 +4,14 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../../constants.dart';
 import '../../../controllers/product_controller.dart';
-import '../../../models/product.dart';
 
 class ProductCard extends StatefulWidget {
   final int itemIndex;
-  final Product product;
+
   final Function() press;
 
   ProductCard({
     required this.itemIndex,
-    required this.product,
     required this.press,
   });
 
@@ -60,7 +58,8 @@ class _ProductCardState extends State<ProductCard> {
               top: 0,
               right: 0,
               child: Hero(
-                tag: '${widget.product.id}',
+                tag: 11,
+                //'${widget.product.id}',
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
                   height: 160,
@@ -108,7 +107,8 @@ class _ProductCardState extends State<ProductCard> {
                         ),
                       ),
                       child: Text(
-                        "\$${widget.product.price}",
+                        '${widget.itemIndex}',
+                        // "\$${widget.product.price}",
                         style: Theme.of(context).textTheme.button,
                       ),
                     ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class SearchBox extends StatelessWidget {
-  const SearchBox({
+  const SearchBox.HeatableLogo({
     Key? key,
     required this.onChanged,
   }) : super(key: key);

@@ -5,7 +5,6 @@ import 'package:get/get_core/src/get_main.dart';
 import '../../../components/hetable_logo.dart';
 import '../../../constants.dart';
 import '../../../controllers/product_controller.dart';
-import '../../../models/product.dart';
 import '../../details/details_screen.dart';
 import 'category_list.dart';
 import 'product_card.dart';
@@ -19,7 +18,7 @@ class Body extends StatelessWidget {
       bottom: false,
       child: Column(
         children: <Widget>[
-          SearchBox(onChanged: (value) {}),
+          SearchBox.HeatableLogo(onChanged: (value) {}),
           CategoryList(),
           SizedBox(height: kDefaultPadding / 2),
           Expanded(
@@ -42,18 +41,13 @@ class Body extends StatelessWidget {
                   else {
                     return ListView.builder(
                       // here we use our demo procuts list
-                      itemCount: products.length,
+                      itemCount: productController.productList_stat.length,
                       //productController.productList.length,
                       itemBuilder: (context, index) => ProductCard(
                         // change the itme
-                        itemIndex: index + 1,
-                        product: products[index],
+                        itemIndex: index,
                         press: () {
-                          Get.to(
-                              () => DetailsScreen(
-                                    product: products[3],
-                                  ),
-                              arguments: index);
+                          Get.to(() => DetailsScreen(), arguments: index);
 
                           /* Navigator.push(
                             context,
