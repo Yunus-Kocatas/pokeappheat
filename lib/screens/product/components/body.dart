@@ -7,7 +7,7 @@ import '../../../constants.dart';
 import '../../../controllers/product_controller.dart';
 import '../../details/details_screen.dart';
 import 'category_list.dart';
-import 'product_card.dart';
+import 'poke_card.dart';
 
 class Body extends StatelessWidget {
   final ProductController productController = Get.put(ProductController());
